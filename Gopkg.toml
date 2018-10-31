@@ -1,0 +1,9 @@
+required = ["github.com/zmb3/gogetdoc"]
+
+[[constraint]]
+name = "github.com/zmb3/gogetdoc"
+revision = "fe99758856e8fec0817cb98da9ed112c3305ef64"
+
+[prune]
+  go-tests = true
+  unused-packages = true
