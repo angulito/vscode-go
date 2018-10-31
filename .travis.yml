@@ -25,9 +25,15 @@ before_install:
       export DISPLAY=:99.0;
       sh -e /etc/init.d/xvfb start;
       sudo apt-get update && sudo apt-get install -y libsecret-1-0;
+
+      # Download the binary to bin folder in $GOPATH
+      curl -L -s https://github.com/golang/dep/releases/download/v${DEP_VERSION}/dep-linux-amd64 -o $GOPATH/bin/dep
+    else
+      # Download the binary to bin folder in $GOPATH
+      curl -L -s https://github.com/golang/dep/releases/download/v${DEP_VERSION}/dep-darwin-amd64 -o $GOPATH/bin/dep
     fi
-  # Download dep library
-  - curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+    # Make the binary executable
+    chmod +x $GOPATH/bin/dep
 
 install:
   - TRAVIS_NODE_VERSION="6";
