@@ -1,0 +1,9 @@
+required = ["github.com/zmb3/gogetdoc"]
+
+[[constraint]]
+name = "github.com/zmb3/gogetdoc"
+branch = "master"
+
+[prune]
+  go-tests = true
+  unused-packages = true
